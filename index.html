@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        humanScore =0;
+        computerScore=0;
+        function getComputerChoice(){
+            let num = Math.floor(Math.random()*3);
+            if (num==1){
+                return "Scissors";
+            } else if (num==0){
+                return "Rock";
+            } else if (num==2) {
+                return "Paper";
+            }
+
+        }
+        function getHumanChoice(){
+            let choice = prompt("Choose from Rock,Paper and scissor");
+            return choice;
+        }
+        function playRound(humanChoice,computerChoice){
+            while (true){
+                let num = prompt("Press 1 to continue and 2 to break")
+                if (num==1){
+                    let ok = 0;
+                    humanScore=0;
+                    computerScore=0;
+                    while (ok <5){
+                        humanChoice= getHumanChoice().toUpperCase();
+                        computerChoice= getComputerChoice().toUpperCase();
+                        if (humanChoice==computerChoice){
+                            console.log(`you lose as ${computerChoice} beats ${humanChoice}`);
+                            console.log(ok+1);
+                            computerScore++;
+                        } else {
+                            console.log(`you win as ${humanChoice} beats ${computerChoice}`);
+                            console.log(ok+1);
+                            humanScore++;
+                        }
+                        if (humanScore>=3){
+                            console.log("you win the game");
+                            break;
+                        } else if (computerScore>=3){
+                            console.log("You lose the game");
+                            break;
+                        }
+                        ok++;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+   
+        playRound();
+
+        
+    </script>
+</body>
+</html>
