@@ -1,1 +1,1 @@
-updated readme
+In this, we have done work on Odinproject RockPaperScissor game. I have created this game as per the guideline of odin project and completed the work under 1 hour.
