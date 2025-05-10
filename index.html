@@ -3,66 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RockpaperScissor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        humanScore =0;
-        computerScore=0;
-        function getComputerChoice(){
-            let num = Math.floor(Math.random()*3);
-            return num;
-
-
-        }
-        function getHumanChoice(){
-            let choice = prompt(`Enter 1 for Rock. 2 for Paper 3 For Scissors`);
-            choice--;
-            return choice;
-
-        }
-    
-        function playRound(humanChoice,computerChoice){
-            while (true){
-                let num = prompt("Press 1 to continue and 2 to break")
-                if (num==1){
-                    let ok = 0;
-                    humanScore=0;
-                    computerScore=0;
-                    while (ok <5){
-                        humanChoice= getHumanChoice();
-                        computerChoice= getComputerChoice();
-                        if (humanChoice===computerChoice){
-                            console.log(`tie`);
-                            console.log(ok+1);
-                        } else if ((humanChoice-computerChoice)>1){
-                            console.log("Human overPowered");
-                            humanScore++;
-                            console.log(ok+1);
-
-                        } else {
-                            console.log("Computer overPowered");
-                            computerScore++;
-                            console.log(ok+1);
-                        }
-                        if(humanScore>=3){
-                            console.log("human won this round");
-                            break;
-                        } else if (computerScore>=3){
-                            console.log("Computer won this round");
-                            break;
-                        }
-                        ok++;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-   
-        playRound();
-
+    <div class="heading">WELCOME TO ROCK, AND SCISSOR!!!
+        <p>CHOOSE YOUR OPTION!!!!!</p>
+    </div>
+    <div class="box">
+        <div class="upper-box">
+            <div class="show-result">
+                <div class="box1"></div>
+                <div class="who-won"></div>
+                <div class="box2"></div>
+            </div>
         
-    </script>
+            <div class="choices">
+                    <button id="ROCK" onclick="play('rock')">"ROCK"</button>
+                    <button id="PAPER" onclick="play('paper')">PAPER</button>
+                    <button id="SCISSORS" onclick="play('scissor')">SCISSORS</button>
+
+
+            </div>
+            <div class="main-box">
+                <div class="human-score">
+
+                </div>
+                <div class="computer-score">
+
+                </div>
+            </div>
+        </div>
+  
+ 
+        <div class="result">
+            
+            <div class="message"></div>
+            <button id="restart">Restart?</button>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
