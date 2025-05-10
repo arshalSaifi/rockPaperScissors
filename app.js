@@ -70,5 +70,6 @@ restart.addEventListener("click",function(){
     result="";
     hs.textContent=0;
     cs.textContent=0;
+    who_won.textContent="";
 });
 
